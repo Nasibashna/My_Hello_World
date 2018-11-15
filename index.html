@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width initial-scale=1.0">
+<link rel="stylesheet" href="jquery.mobile-1.4.5.css">
+
+<script src="demos/js/jquery.js"></script>
+
+<script src="jquery.mobile-1.4.5.js"></script>
+
+</head>
+
+<body>
+	<div data-role="page" id="home" data-theme="a">
+		<div data-role="header">
+			<h1>Simple Calculator</h1>
+			<div data-role="navbar">
+				<ul>
+				   <li><a href="#home" data-icon="home">Home</a></li>
+				   <li><a href="#pageone" data-icon="grid">Calculator</a></li>
+				   <li><a href="#pagethree" data-icon="info">Help</a></li>
+				</ul>
+			</div>
+
+		</div>
+		<div data-role="main" class="ui-content">
+			<p>This is a jquery mobile exercise which provides the user with a calculator for basic mathematical operations</p>
+		</div>
+		<div data-role="footer">
+			<h3>Homework</h3>
+		</div>
+	</div>
+
+
+	<div data-role="page" id="pageone" data-theme="a">
+		<div data-role="header">
+			<h1>Simple Calculator</h1>
+			<div data-role="navbar">
+				<ul>
+				   <li><a href="#home" data-icon="home">Home</a></li>
+				   <li><a href="#pageone" data-icon="grid">Calculator</a></li>
+				   <li><a href="#pagethree" data-icon="info">Help</a></li>
+				</ul>
+			</div>
+
+		</div>
+		<div data-role="main" class="ui-content">
+			<form>
+				<input type="text" id="number1" placeholder="number1">
+				<select name="operators" id="operators">
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="/">/</option>
+					<option value="*">*</option>
+				</select>
+				<input type="text" id="number2" placeholder="number2">
+				<input type="text" ame="">
+                <a id="btncalculate" href="#pagetwo" data-role="button">Calculate</a>
+			</form>
+			
+		</div>
+		<div data-role="footer">
+			<h3>Homework</h3>
+		</div>
+	</div>
+	</div>
+
+
+	<div data-role="page" id="pagetwo" data-theme="a">
+		<div data-role="header">
+			<h1>Simple Calculator</h1>
+			<div data-role="navbar">
+				<ul>
+				   <li><a href="#home" data-icon="home">Home</a></li>
+				   <li><a href="#pageone" data-icon="grid">Calculator</a></li>
+				   <li><a href="#pagethree" data-icon="info">Help</a></li>
+				</ul>
+			</div>
+
+		</div>
+		<div data-role="main" class="ui-content">
+		<p><h4 id="results"></h4></p>
+
+			
+	    <a href="#pageone" id="btncalculate2" data-role="button">Back</a>
+		</div>
+		<div data-role="footer">
+			<h3>Homework</h3>
+		</div>
+	</div>
+
+	<script>
+		$(document).ready(function(){
+				$('#btncalculate').on("click", function(){
+					console.log("button click!");
+					var first = parseFloat($('#number1').val());
+					var second = parseFloat($('#number2').val());
+					var operation= $('#operators').val();
+					var result;
+					//console.log("values : " + first +" "+op+" "+second);
+					switch (operation){
+						case "+":
+									result = first + second;
+									break;
+						case "-":
+									result = first - second;
+									break;	
+
+						case "*":
+									result = first * second;
+									break;
+
+						case "/":
+									result = first / second;
+									break;														
+					}
+					console.log("values: "+ first +""+operation+""+ second +" = "+result);
+
+					$('#results').html(first +" "+operation+" "+ second +" = "+result);
+
+				});
+				
+
+		
+		});
+	</script>
+
+	<div data-role="page" id="pagethree" data-theme="a">
+		<div data-role="header">
+			<h1>Simple Calculator</h1>
+			<div data-role="navbar">
+				<ul>
+				   <li><a href="#home" data-icon="home">Home</a></li>
+				   <li><a href="#pageone" data-icon="grid">Calculator</a></li>
+				   <li><a href="#pagethree" data-icon="info">Help</a></li>
+				</ul>
+			</div>
+
+		</div>
+		<div data-role="main" class="ui-content">
+			<p>THIS IS THE HELP SECTION AND PROVIDES BASIC INFORMATIN ABOUT HOW TO USE THE CALCULATOR</p>
+			 <a href="#pagefour" Data-icon="info" data-role="button">MORE INFO</a>
+		</div>
+		<div data-role="footer">
+			<h3>HOMEWORK</h3>
+		</div>
+	</div>
+
+	<div data-role="page" id="pagefour" data-dialogue="true" data-theme="a">
+		<div data-role="header">
+			<h1>MORE INFO</h1>
+			<div data-role="main" class="ui-content">
+				<p>YOU HAVE REQUESTED MORE INFROMATION ABOUT THE APP</p>
+				<a data-role="button" data-rel="back" data-icon="back">DISMISS</a>
+		
+	</div>
+
+
+
+</body>
+</html>
+
